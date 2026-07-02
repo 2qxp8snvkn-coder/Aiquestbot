@@ -122,7 +122,9 @@ async def do_quests(ctx):
     await ctx.send(
         "Which quest would you like to execute?",
         view=view
-    )
+    
+        import os
 
+TOKEN = os.getenv("TOKEN")
 
-bot.run("YOUR_BOT_TOKEN")
+bot.run(TOKEN)   
