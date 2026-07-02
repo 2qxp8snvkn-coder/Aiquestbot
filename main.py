@@ -123,7 +123,7 @@ async def do_quests(ctx):
         "Which quest would you like to execute?",
         view=view
    )
-        import os
+import os
 
 TOKEN = os.getenv("TOKEN")
 
