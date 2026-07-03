@@ -18,8 +18,7 @@ Thread(target=run).start()
 
 # Discord Bot Setup
 intents = discord.Intents.default()
-intents.typing = False
-intents.presences = False
+intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
@@ -109,6 +108,9 @@ class QuestSelect(discord.ui.Select):
 async def on_ready():
     print(f"{bot.user} has connected to Discord!")
 
+@bot.command()
+async def ping(ctx):
+    await ctx.send("Pong!")
 
 @bot.command()
 async def connect(ctx, token: str):
