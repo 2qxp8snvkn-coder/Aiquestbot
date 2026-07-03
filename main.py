@@ -2,6 +2,20 @@ import discord
 from discord.ext import commands
 import sqlite3
 
+from flask import Flask
+from threading import Thread
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run():
+    app.run(host="0.0.0.0", port=10000)
+
+Thread(target=run).start()
+
 # Discord Bot Setup
 intents = discord.Intents.default()
 intents.typing = False
